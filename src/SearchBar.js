@@ -1,27 +1,34 @@
+import React from 'react';
+import LiveSearchResults from './LiveSearch';
 
+function SearchBar({ searchValue, handleSearchChange, handleSearchSubmit, liveResults, handleKeyPress }) {
 
-function SearchBar  ({ searchValue, setSearchValue, handleSearch }) {
-    const handleInputChange = (e) => {
-        setSearchValue(e.target.value);
-    }
-
-    return (
-        <div>
-            <div className="searchBox">
-            <input 
-                className="searchInput"
-                type="text" 
-                placeholder="Search..." 
-                value={searchValue} 
-                onChange={handleInputChange}
-            />
-            <button
-                className="searchButton"
-             onClick={handleSearch}>
-                Search            </button>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <div className="searchBox">
+        <input 
+          className="searchInput"
+          type="text" 
+          placeholder="Search..." 
+          value={searchValue}
+          onChange={handleSearchChange}
+          onKeyDown={handleKeyPress} // Search when Enter key is pressed
+        />
+        <button
+          className="searchButton"
+          onClick={handleSearchSubmit}
+          // Search when button is clicked
+        >
+          Search
+        </button>
+        <LiveSearchResults 
+        className ="resultsDropdown"
+        results={liveResults} />
+      </div>
+     
+    </div>
+  );
 }
 
 export default SearchBar;
+

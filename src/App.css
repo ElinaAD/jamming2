@@ -16,7 +16,7 @@
 }
 
 .searchBox:hover > .searchInput {
-  width: 240px;
+  width: 300px;
   padding: 10px 6px;
 }
 
@@ -52,3 +52,65 @@ color : #2f3640;
   width: 0px;
 
 }
+
+/*Results Drop down*/
+.resultsDropdown{
+  position: absolute;
+  top: 100%; /* Position at the bottom of the parent container */
+  left: 0; /* Align with the left edge of the parent container */
+  width: 100%; /* Make the dropdown the same width as the parent container */
+  background: #2f3640; /* Change as needed */
+  color:white;
+  border-radius: 5px;
+  z-index: 1; /* Make sure the dropdown appears above other elements */
+  display: none; /* Hide by default */
+  
+}
+
+.searchBox:hover > .resultsDropdown {
+  display: block;
+}
+
+.finalSearchResults{
+  position: flex;
+  margin-top: 15%;
+  margin-left: 5%;
+  width: fit-content;
+  
+}
+
+
+/* Search Result Table */
+
+
+table {
+  width: 800px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+ tbody tr {
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.063);
+ }
+
+th,
+td {
+  padding: 15px;
+  background-color: rgba(69, 68, 69, 0.1);
+  color: #fff;
+}
+th {
+  text-align: left;
+}
+thead th {
+  background-color: rgba(47,54,64, 0.8);
+}
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.167);
+}
+tbody td {
+  position: relative;
+}
+
